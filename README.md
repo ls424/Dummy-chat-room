@@ -10,6 +10,10 @@ This is a dummy java program which implements socket.io and multithreading to re
 #####6.The default  portNumber is 8000 and hostname is "localhost".
 
 ###Usage
+
+####Boradcast: Simply type in some words and send it out. If it starts with @, it might be send out as unicast.
+
+####Unicast: The message should start with "@"+username+ " "+ message(for example, @123 message), or if might be send out as broadcast. 
 (Special Format)
 #####Send friend request: #friendme @Username, it should start with"#friendme @" and spaces between "@" and username are not allowed, spaces after the username is allowed.
 #####Friendship confirmation: @username #friends, there must be and only be one " " bwtween"@username" and "#friends", here @username refers to the one who want to make friend with you. If not following the rule, the message will be sent out according its format or it will just be an notification to user. It depends.
