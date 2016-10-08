@@ -1,10 +1,5 @@
-import java.io.DataInputStream;
-import java.io.PrintStream;
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.Socket;
-import java.net.ServerSocket;
+import java.io.*;
+import java.net.*;
 import java.util.*;
 
 
@@ -53,6 +48,10 @@ public class Server {
                 }
                 if (i == maxUsersCount) { // no open seats for new user
                     // PrintStream output = new PrintStream()
+                    PrintStream out = new PrintStream(userSocket.getOutputStream());
+                        out.println("No open seats currently, please try it later");
+                        out.close();
+                        userSocket.close();
                 }
             }
         } catch (Exception ex) {
@@ -75,12 +74,9 @@ class userThread extends Thread {
     private final userThread[] threads;
     private Set<String> set = new HashSet<String>();
 
-    // only relevant for Part IV: adding friendship
     private ArrayList<String> friends = new ArrayList<String>();
     private ArrayList<String> friendrequests = new ArrayList<String>();  //keep track of sent friend requests 
-    //
-
-    
+        
     public userThread(Socket userSocket, userThread[] threads) {
         this.userSocket = userSocket;
         this.threads = threads;
