@@ -22,5 +22,5 @@ This is a dummy java program which implements socket.io and multithreading to re
 
 ##Special situation
 You could make friends with yourself.
-When one user exit, the server concole will indicate "java.net.SocketException: socket closed", it won't impact the server anyway, so I don't handle it.
-When there are no open seats for new coming user, the user side will get NullPointerException. Since it need to rerun the program to enter the chat room anyway, I didn't handle it.
+When one user exits, the server concole will indicate "java.net.SocketException: socket closed", it won't impact the server anyway, so I don't handle it.
+When there are no open seats for new coming user, the user side will get NullPointerException. Since it need to rerun the program to enter the chat room anyway, I don't handle it.
